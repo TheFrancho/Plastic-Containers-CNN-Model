@@ -1,0 +1,66 @@
+*{
+    box-sizing: border-box;
+}
+
+p, mat-card-title{
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.file-name {
+    margin-left: 1rem;
+    /* or whatever margin you require */
+}
+
+table {
+    width: 100%;
+}
+
+.mat-column-value {
+    padding-left: 16px;
+}
+
+.w-80{
+    width: 80% !important;
+}
+
+.form-button{
+    width: 73px !important;
+}
+.bg-green{
+    background-color: rgb(14, 145, 57) !important;
+}
+
+.bg-red{
+    background-color: rgb(170, 18, 38) !important;
+}
+
+mat-card{
+    height: 390px; 
+    padding: 0;
+    
+    mat-card-header{
+        background-color: #3c56ba;
+        color: #fff;
+        padding:5px !important;
+        border-top-left-radius: .5rem;
+        border-top-right-radius: .5rem;
+
+        mat-card-title{
+            padding: 1rem 1.5rem !important;
+        }
+    }
+
+    mat-card-content{
+        padding: 1rem 1.5rem !important;
+    }
+}
+
+
+.input-block{
+    padding-bottom: .3rem;
+    margin-top: 1rem;
+    border: 2px solid rgba(180, 180, 180, 0.685);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}

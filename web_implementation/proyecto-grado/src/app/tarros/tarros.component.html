@@ -1,0 +1,52 @@
+<mat-grid-list cols="2" rowHeight="1:1" style="margin-top: -66px;">
+    <mat-grid-tile>
+        <mat-card class="w-80">
+            <mat-card-header>
+                <mat-card-title>Tarros</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <h2>Suba las imagenes que desea comprobar</h2>
+                <div class="input-block">
+                    <button class="form-button" type="button" (click)="fileInputOne.click()" mat-stroked-button color="primary">Frente</button>
+                    <input hidden (change)="onFileOneSelected($event)" #fileInputOne type="file">
+                    <span class="file-name">{{firstSelectedFile?.name}}</span>
+                </div>
+                <div class="input-block">
+                    <button class="form-button" type="button" (click)="fileInputTwo.click()" mat-stroked-button color="primary">Detras</button>
+                    <input hidden (change)="onFileTwoSelected($event)" #fileInputTwo type="file">
+                    <span class="file-name">{{secondSelectedFile?.name}}</span>
+                </div>
+                <div class="input-block" style="margin-bottom: 1.7rem">
+                    <button class="form-button" type="button"  (click)="fileInputThree.click()" mat-stroked-button color="primary">Arriba</button>
+                    <input hidden (change)="onFileThreeSelected($event)" #fileInputThree type="file">
+                    <span class="file-name">{{thirdSelectedFile?.name}}</span>
+                </div>
+                <div style="text-align: center;">
+                    <button type="button" mat-raised-button color="primary" (click)="onCheckImages()" [disabled]="!firstSelectedFile||!secondSelectedFile||!thirdSelectedFile" style="min-width: 90px !important">Verificar</button>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <mat-card *ngIf="result" class="w-80">
+            <mat-card-header [ngClass]="{'bg-green': this.prediction === 'Positivo', 'bg-red': this.prediction === 'Negativo'}">
+                <mat-card-title>Resultado</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <h2> Resultados de las imagenes enviadas</h2>
+                <table mat-table [dataSource]="result">
+                    <ng-container matColumnDef="key">
+                        <th mat-header-cell *matHeaderCellDef>  Variable  </th>
+                        <td mat-cell *matCellDef="let element">  <b>{{element.key}}</b>  </td>
+                    </ng-container>
+                    <ng-container matColumnDef="value">
+                        <th class="mat-column-value" mat-header-cell *matHeaderCellDef>  Valor  </th>
+                        <td mat-cell *matCellDef="let element">  {{element.value}}  </td>
+                    </ng-container>
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+            </mat-card-content>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>
