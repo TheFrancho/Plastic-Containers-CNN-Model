@@ -55,7 +55,7 @@ export class TarrosComponent implements OnInit {
         this.result = [
           {'key': 'Predicción', 'value': prediction},
           {'key': 'Tarro frontal', 'value': `${check_result['front']}%`},
-          {'key': 'Tarro tracero', 'value': `${check_result['back']}%`},
+          {'key': 'Tarro trasero', 'value': `${check_result['back']}%`},
           {'key': 'Tarro arriba', 'value': `${check_result['up']}%`}
         ];
       },
