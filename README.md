@@ -1,4 +1,4 @@
-# projecto-envases
+# Plastic-Containers-CNN-Model
 
 Convolutional Neural Network algorithm for integrity detection on plastic containers.
 
